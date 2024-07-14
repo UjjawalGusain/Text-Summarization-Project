@@ -1,0 +1,5 @@
+fine_tuned_model_epoch_5_final/
+venv/
+
+__pycache__/
+node_modules/

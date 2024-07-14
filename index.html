@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarization Demo</title>
+</head>
+<body>
+    <h1>Text Summarization Demo</h1>
+    <form id="summarizeForm">
+        <label for="inputText">Enter your text:</label><br>
+        <textarea id="inputText" name="inputText" rows="10" cols="50"></textarea><br><br>
+        <button type="submit">Summarize</button>
+    </form>
+    <div id="summaryResult"></div>
+
+    <script>
+        document.getElementById('summarizeForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const text = formData.get('inputText');
+
+            const response = await fetch('http://localhost:5000/summarize', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text: text })
+            });
+            const data = await response.json();
+
+            document.getElementById('summaryResult').innerText = data.summary;
+        });
+    </script>
+</body>
+</html>
