@@ -101,3 +101,7 @@ Additionally, I developed a web application utilizing React, Flask (Python), and
 ## Contributing
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/UjjawalGusain/Text-Summarization-Project/blob/main/LICENSE) file for details.
